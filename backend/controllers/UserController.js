@@ -39,7 +39,6 @@ export const register = async (req, res) => {
     res.json({ ...userData, token });
   } catch (err) {
     console.log(err);
-
     res.status(500).json({
       message: "User registration error!",
     });
@@ -82,7 +81,6 @@ export const login = async (req, res) => {
     res.json({ ...userData, token });
   } catch (err) {
     console.log(err);
-
     res.status(500).json({
       message: "User sign in error!",
     });
@@ -104,7 +102,6 @@ export const getMe = async (req, res) => {
     res.json(userData);
   } catch (err) {
     console.log(err);
-
     res.status(500).json({
       message: "Access denied!",
     });
