@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import multer from "multer";
+import cors from "cors";
 
 import {
   loginValidation,
@@ -29,6 +30,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
@@ -70,7 +72,7 @@ app.patch(
   PostController.update
 );
 
-app.listen(3000, (err) => {
+app.listen(4000, (err) => {
   if (err) {
     return console.log(err);
   }
