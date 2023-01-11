@@ -12,6 +12,7 @@ import { handleValidationErrors, checkAuth } from "./utils/index.js";
 import { UserController, PostController } from "./controllers/index.js";
 import { MONGO_URL } from "./constants.js";
 
+mongoose.set("strictQuery", false);
 mongoose
   .connect(MONGO_URL)
   .then(() => console.log("DB ok"))
