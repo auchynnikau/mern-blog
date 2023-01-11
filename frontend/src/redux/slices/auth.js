@@ -15,9 +15,9 @@ export const fetchRegister = createAsyncThunk(
 );
 
 export const fetchAuthMe = createAsyncThunk(
-  "auth/fetchAuth",
+  "auth/fetchAuthMe",
   async (params) => {
-    const { data } = await axios.post("/auth/me ", params);
+    const { data } = await axios.get("/auth/me ", params);
     return data;
   }
 );

@@ -1,4 +1,5 @@
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
 
 import axios from "../axios";
@@ -35,13 +36,13 @@ export const FullPost = () => {
         user={post.user}
         tags={post.tags}
         title={post.title}
-        imageUrl={post.imageUrl}
+        imageUrl={post.imageUrl ? `http://localhost:4000${post.imageUrl}` : ""}
         createdAt={post.createdAt}
         viewsCount={post.viewsCount}
         commentsCount={3}
         isFullPost
       >
-        <p>{post.text}</p>
+        <ReactMarkdown children={post.text} />
       </Post>
       <CommentsBlock
         items={[
