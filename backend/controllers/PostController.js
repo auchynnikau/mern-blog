@@ -59,6 +59,8 @@ export const getOne = async (req, res) => {
             message: "Post not found!",
           });
         }
+
+        res.json(doc);
       }
     );
   } catch (err) {
