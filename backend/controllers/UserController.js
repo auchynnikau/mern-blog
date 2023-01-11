@@ -39,7 +39,7 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
-    const user = UserModel.findOne({ email: req.body.email });
+    const user = await UserModel.findOne({ email: req.body.email });
 
     if (!user) {
       return res.status(404).json({
@@ -81,7 +81,7 @@ export const login = async (req, res) => {
 
 export const getMe = async (req, res) => {
   try {
-    const user = UserModel.findById(req.userId);
+    const user = await UserModel.findById(req.userId);
 
     if (!user) {
       return res.status(404).json({

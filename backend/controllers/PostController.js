@@ -61,8 +61,6 @@ export const getOne = async (req, res) => {
         }
       }
     );
-
-    res.json(posts);
   } catch (err) {
     console.log(err);
     res.status(500).json({
@@ -119,8 +117,6 @@ export const remove = async (req, res) => {
         });
       }
     );
-
-    res.json(post);
   } catch (err) {
     console.log(err);
     res.status(500).json({
