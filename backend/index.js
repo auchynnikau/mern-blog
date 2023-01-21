@@ -7,14 +7,13 @@ import {
   loginValidation,
   registerValidation,
   postCreateValidation,
-} from "./validations.js";
+} from "./validations/index.js";
 import { handleValidationErrors, checkAuth } from "./utils/index.js";
 import { UserController, PostController } from "./controllers/index.js";
-import { MONGO_URL } from "./constants.js";
 
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(MONGO_URL)
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("DB ok"))
   .catch((err) => console.error("DB error", err));
 
