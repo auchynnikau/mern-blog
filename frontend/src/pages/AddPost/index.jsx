@@ -33,7 +33,7 @@ export const AddPost = () => {
       setImageUrl(data.url);
     } catch (err) {
       console.error(err);
-      alert("Ошибка загрузки файла!");
+      alert("Uploading files error!");
     }
   };
 
@@ -57,7 +57,7 @@ export const AddPost = () => {
         })
         .catch((err) => {
           console.error(err);
-          alert("Ошибка при получении статьи!");
+          alert("Fetching posts error!");
         });
     }
   }, []);
@@ -80,7 +80,7 @@ export const AddPost = () => {
       navigate(`/posts/${_id}`);
     } catch (err) {
       console.error(err);
-      alert("Ошибка создания статьи!");
+      alert("Creating post error!");
     }
   };
 
@@ -89,7 +89,7 @@ export const AddPost = () => {
       spellChecker: false,
       maxHeight: "400px",
       autofocus: true,
-      placeholder: "Введите текст...",
+      placeholder: "Type test...",
       status: false,
       autosave: {
         enabled: true,
@@ -141,7 +141,7 @@ export const AddPost = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         variant="standard"
-        placeholder="Заголовок статьи..."
+        placeholder="Article heading..."
         fullWidth
       />
       <TextField
@@ -149,7 +149,7 @@ export const AddPost = () => {
         value={tags}
         onChange={(e) => setTags(e.target.value)}
         variant="standard"
-        placeholder="Тэги"
+        placeholder="Tags"
         fullWidth
       />
       <SimpleMDE
@@ -160,10 +160,10 @@ export const AddPost = () => {
       />
       <div className={styles.buttons}>
         <Button onClick={onSubmit} size="large" variant="contained">
-          {isEditing ? "Сохранить" : "Опубликовать"}
+          {isEditing ? "Save" : "Publish"}
         </Button>
         <a href="/">
-          <Button size="large">Отмена</Button>
+          <Button size="large">Cancel</Button>
         </a>
       </div>
     </Paper>
