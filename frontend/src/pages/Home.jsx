@@ -30,7 +30,7 @@ export const Home = () => {
         aria-label="basic tabs example"
       >
         <Tab label="Новые" />
-        <Tab label="Популярные" />
+        <Tab label="Popular" />
       </Tabs>
       <Grid container spacing={4}>
         <Grid xs={8} item>
@@ -61,17 +61,17 @@ export const Home = () => {
             items={[
               {
                 user: {
-                  fullName: "Вася Иванов",
+                  fullName: "John Doe",
                   avatarUrl: "https://mui.com/static/images/avatar/1.jpg",
                 },
-                text: "Это тестовый комментарий",
+                text: "Some random comment",
               },
               {
                 user: {
-                  fullName: "Иван Иванов",
+                  fullName: "John Doe 2",
                   avatarUrl: "https://mui.com/static/images/avatar/2.jpg",
                 },
-                text: "When displaying three lines or more, the avatar is not aligned at the top. You should set the prop to align the avatar at the top",
+                text: "Testing comment",
               },
             ]}
             isLoading={false}

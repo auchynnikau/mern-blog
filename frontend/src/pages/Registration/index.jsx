@@ -31,7 +31,7 @@ export const Registration = () => {
     const data = await dispatch(fetchRegister(values));
 
     if (!data.payload) {
-      return alert("Не удалось зарегистрироваться!");
+      return alert("Registration error!");
     }
 
     if ("token" in data.payload) {
@@ -46,7 +46,7 @@ export const Registration = () => {
   return (
     <Paper classes={{ root: styles.root }}>
       <Typography classes={{ root: styles.title }} variant="h5">
-        Создание аккаунта
+        Create account
       </Typography>
       <div className={styles.avatar}>
         <Avatar sx={{ width: 100, height: 100 }} />
@@ -54,10 +54,10 @@ export const Registration = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           className={styles.field}
-          label="Полное имя"
+          label="Full name"
           error={errors.fullName?.message}
           helperText={errors.fullName?.message}
-          {...register("fullName", { required: "Укажите полное имя" })}
+          {...register("fullName", { required: "Type full name" })}
           fullWidth
         />
         <TextField
@@ -65,15 +65,15 @@ export const Registration = () => {
           label="E-Mail"
           error={errors.email?.message}
           helperText={errors.email?.message}
-          {...register("email", { required: "Укажите почту" })}
+          {...register("email", { required: "Type E-Mail" })}
           fullWidth
         />
         <TextField
           className={styles.field}
-          label="Пароль"
+          label="Password"
           error={errors.password?.message}
           helperText={errors.password?.message}
-          {...register("password", { required: "Укажите пароль" })}
+          {...register("password", { required: "Type password" })}
           fullWidth
         />
         <Button
@@ -83,7 +83,7 @@ export const Registration = () => {
           size="large"
           fullWidth
         >
-          Зарегистрироваться
+          Register
         </Button>
       </form>
     </Paper>
